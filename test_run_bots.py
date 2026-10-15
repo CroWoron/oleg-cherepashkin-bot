@@ -1,11 +1,27 @@
 import subprocess
+import tempfile
 import unittest
+from pathlib import Path
 from unittest.mock import Mock, patch
 
 import run_bots
 
 
 class RunBotsTest(unittest.TestCase):
+    def test_startup_removes_stale_pid_files_but_keeps_bot_data(self):
+        with tempfile.TemporaryDirectory() as directory:
+            data_dir = Path(directory)
+            for name in run_bots.PID_FILES:
+                (data_dir / name).write_text("8", encoding="ascii")
+            database = data_dir / "memory.sqlite3"
+            database.write_bytes(b"memory")
+
+            run_bots.clear_stale_pid_files(data_dir)
+
+            self.assertTrue(database.exists())
+            for name in run_bots.PID_FILES:
+                self.assertFalse((data_dir / name).exists())
+
     def test_wait_returns_failure_when_either_bot_stops(self):
         telegram = Mock()
         telegram.poll.side_effect = [None, 7]

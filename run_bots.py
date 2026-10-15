@@ -1,10 +1,19 @@
+import os
 import signal
 import subprocess
 import sys
 import time
+from pathlib import Path
 
 
 COMMANDS = ([sys.executable, "bot.py"], [sys.executable, "vk_bot.py"])
+PID_FILES = ("telegram.pid", "vk.pid")
+
+
+def clear_stale_pid_files(data_dir=None):
+    data_dir = Path(data_dir or os.getenv("DATA_DIR", "data"))
+    for name in PID_FILES:
+        (data_dir / name).unlink(missing_ok=True)
 
 
 def wait_for_exit(processes):
@@ -28,6 +37,7 @@ def stop_processes(processes):
 
 
 def main():
+    clear_stale_pid_files()
     processes = [subprocess.Popen(command) for command in COMMANDS]
 
     def stop(_signum, _frame):
