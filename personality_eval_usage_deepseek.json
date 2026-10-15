@@ -1,0 +1,36 @@
+{
+  "by_task": {
+    "deepseek:answer": {
+      "requests": 85,
+      "prompt_tokens": 110695,
+      "completion_tokens": 3568,
+      "total_tokens": 114263
+    },
+    "deepseek:judge": {
+      "requests": 9,
+      "prompt_tokens": 8519,
+      "completion_tokens": 3277,
+      "total_tokens": 11796
+    },
+    "deepseek:planner": {
+      "requests": 97,
+      "prompt_tokens": 94389,
+      "completion_tokens": 2390,
+      "total_tokens": 96779
+    }
+  },
+  "by_provider": {
+    "deepseek": {
+      "requests": 191,
+      "prompt_tokens": 213603,
+      "completion_tokens": 9235,
+      "total_tokens": 222838
+    },
+    "groq": {
+      "requests": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    }
+  }
+}

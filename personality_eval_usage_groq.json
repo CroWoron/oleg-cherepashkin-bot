@@ -1,0 +1,48 @@
+{
+  "by_task": {
+    "deepseek:answer": {
+      "requests": 84,
+      "prompt_tokens": 106268,
+      "completion_tokens": 3216,
+      "total_tokens": 109484
+    },
+    "deepseek:answer_retry": {
+      "requests": 1,
+      "prompt_tokens": 1054,
+      "completion_tokens": 36,
+      "total_tokens": 1090
+    },
+    "deepseek:judge": {
+      "requests": 9,
+      "prompt_tokens": 8116,
+      "completion_tokens": 2698,
+      "total_tokens": 10814
+    },
+    "deepseek:planner": {
+      "requests": 1,
+      "prompt_tokens": 976,
+      "completion_tokens": 18,
+      "total_tokens": 994
+    },
+    "groq:planner": {
+      "requests": 95,
+      "prompt_tokens": 79976,
+      "completion_tokens": 2205,
+      "total_tokens": 82181
+    }
+  },
+  "by_provider": {
+    "deepseek": {
+      "requests": 95,
+      "prompt_tokens": 116414,
+      "completion_tokens": 5968,
+      "total_tokens": 122382
+    },
+    "groq": {
+      "requests": 95,
+      "prompt_tokens": 79976,
+      "completion_tokens": 2205,
+      "total_tokens": 82181
+    }
+  }
+}

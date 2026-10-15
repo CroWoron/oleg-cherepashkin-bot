@@ -1,0 +1,19 @@
+{
+  "selected": "oleg",
+  "personas": [
+    {
+      "id": "oleg",
+      "name": "Олег Черепашкин",
+      "personality_file": "personality.json",
+      "env_file": ".env",
+      "data_dir": "data"
+    },
+    {
+      "id": "vova-reznicenko",
+      "name": "Вова Резниченко",
+      "personality_file": "personas\\vova-reznicenko\\personality.json",
+      "env_file": "personas\\vova-reznicenko\\.env",
+      "data_dir": "personas\\vova-reznicenko\\data"
+    }
+  ]
+}
